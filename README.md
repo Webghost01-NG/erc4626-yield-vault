@@ -1,8 +1,12 @@
 # ERC-4626 Yield Vault
 
-A tokenized ERC-4626 yield vault with virtual share offset inflation attack protection, reentrancy guards, and performance fee accounting, written in **Solidity ^0.8.20** and tested with **Foundry**.
+> **What it is about:** A standardized, tokenized DeFi yield vault adhering strictly to the ERC-4626 tokenized vault specification.
+>
+> **What it does:** Accepts deposits of an underlying ERC-20 token and issues yield-bearing shares whose exchange rate increases as profits accumulate, protects depositors against share inflation and donation exploits via a virtual share offset, enforces directional rounding in favor of the vault, and mints a documented performance fee on recognized yield.
 
-## Core Features & Architecture
+---
+
+## Key Features & Architecture
 
 - **Inflation / Donation Attack Protection:**
   - Implements `_decimalsOffset() = 3` (equivalent to 1,000 virtual shares) to mathematically neutralize first-depositor share inflation and donation exploits.
